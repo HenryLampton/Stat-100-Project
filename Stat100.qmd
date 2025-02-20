@@ -1,0 +1,59 @@
+---
+title: "Stat100"
+author: Charlie Hanson, Henry Lampton
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+#### Summary ####
+We plan to analyze the effect of population density on education around the United States. We will do this by gathering cencus data from not only majior cities but from less densly populated areas aswell. We can use standerdized testing scores from the same districts along side the census data to ananlyse if there is a signifigant impact and if so what the impact is.
+
+It seems eveident that majior cities with large school and class sizes would struggle to hire teachers and afford ample education to each student however rural areas can face problems due to lack or recourses and jobs in the area.
+
+
+```{r}
+#| include: FALSE
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(RColorBrewer)
+```
+
+
+```{r}
+#### Simulation  ####
+simulated_data <-
+  tibble(
+    City = sample(c("New York City", "Los Angeles", "Chicago","Houston","Phoenix",
+    "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose",
+    "Austin", "Jacksonville", "San Francisco", "Indianapolis", "Columbus",
+    "Fort Worth", "Charlotte", "Memphis", "Boston", "Baltimore",
+    "Detroit", "El Paso", "Seattle", "Denver", "Milwaukee", "Portland",
+    "Oklahoma City", "Nashville", "Washington, D.C.", "Kansas City",
+    "St. Louis", "Raleigh", "Cleveland", "Miami", "Oakland", "Minneapolis",
+    "Tulsa", "Virginia Beach", "Sacramento", "Louisville", "Albuquerque",
+    "Tucson", "New Orleans", "Long Beach", "Colorado Springs", "Fresno",
+    "Honolulu", "Arlington", "Wichita", "Cincinnati", "St. Paul"), 50, replace = TRUE),
+  Population_Density = round(runif(50, min = 100, max = 10000)),
+  High_School_Graduation_Rate = round(runif(50, min = 50, max = 100))
+)
+    
+write_csv(x = simulated_data, file = "simulated_data.csv")
+```
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+simulated_data <-
+  read_csv(
+    file = "simulated_data.csv", show_col_types = FALSE)
+  simulated_data|>
+    ggplot(aes(x = Population_Density, y = High_School_Graduation_Rate)) +
+    geom_point() 
+    
+```
+
+
