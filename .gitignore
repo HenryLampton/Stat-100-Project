@@ -50,7 +50,6 @@ rsconnect/
 
 # token file
 token
-Token
 
 *.html
 *.csv
