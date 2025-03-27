@@ -47,6 +47,7 @@ library(ggplot2)
 
 
 ```{r}
+### Simulated Data Set ###
 simulated_data <-
   read_csv(
     file = "simulated_data.csv", show_col_types = FALSE)
@@ -56,4 +57,59 @@ simulated_data <-
     
 ```
 
+```{r}
+library(readxl)
+```
+
+```{r}
+### Texas ###
+Texas <- 
+  read_excel("Texas2023.xlsx")
+
+Texas_Pop <-
+  read_csv("TexasPop.csv")
+
+```
+
+```{r}
+### Edit Texas Data ###
+Texas 
+```
+
+
+```{r}
+### Florida ###
+Florida <-
+  read_excel("Florida2023.xlsx") |>
+
+Florida_Pop <- 
+  read_csv("FloridaPop.csv")
+```
+
+```{r}
+### Clean Florida ###
+Florida |>
+  
+```
+
+
+```{r}
+### New York ###
+New_York <-
+  read_csv("data-Ct345.csv")
+
+New_York_Pop <- 
+  read_csv("NewYorkPop.csv")
+
+```
+
+```{r}
+### Clean New York ###
+New_York2 ->
+New_York |>
+  
+  group_by( County ) |>
+  summarize( `Graduation rate 2023` = avg())
+  
+```
 
