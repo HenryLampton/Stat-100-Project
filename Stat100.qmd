@@ -12,11 +12,11 @@ It seems eveident that majior cities with large school and class sizes would str
 
 
 ```{r}
-#| include: FALSE
+#| include: False
 library(tidyverse)
 library(janitor)
 library(lubridate)
-library(RColorBrewer)
+library(RColorBrewer) 
 ```
 
 
@@ -88,7 +88,16 @@ Florida_Pop <-
 
 ```{r}
 ### Clean Florida ###
-Florida |>
+FloridaPop <- FloridaPop |>
+  select(county, densityMi, rank)
+
+Florida2023 <- Florida2023 |>
+  mutate(county = `High School Graduation Rate, Percent of Student Cohort Since 9th Grade, 2022-23`) |>
+  mutate( Graduation_Rate = ...2) |>
+  select(county, Graduation_Rate)
+
+# Florida2023 <- left_join(Florida2023, FloridaPop)
+  
   
 ```
 
@@ -112,4 +121,5 @@ New_York |>
   summarize( `Graduation rate 2023` = avg())
   
 ```
+
 
