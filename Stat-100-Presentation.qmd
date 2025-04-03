@@ -1,0 +1,17 @@
+---
+title: "Stat-100-Presentation"
+author: "Henry Lampton and Charlie Hanson"
+format: revealjs
+---
+
+## Project Explanation
+
+Our project is about the effect of population density in different counties on Highschool graduation rates across several different states. We will select a few of the lower population counties and a few of the higher population counties from each state and analize the results. Our hypothesis is that in areas of low population density, the graduation rate will be visibly lower in most examples.
+
+## Graphic
+
+Graph of data will appear here
+
+## Source of Data
+
+Our Highschool graduation data was collected from the various states Board of Education websites. Our county population data was all collected from the World Population Review website.
